@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 def apiTextToSpeech():
     load_dotenv()
 
-    url = "https://ttsmp3.com/makemp3_new.php"
+    API_URL = os.getenv("API_URL")
     API_KEY = os.getenv("RAPIDAPI_KEY")
 
     data = {
@@ -23,8 +23,8 @@ def apiTextToSpeech():
         'X-RapidAPI-Host': "text-to-speech-for-28-languages.p.rapidapi.com"
     }
 
-    response = requests.post(url, data=data, headers=headers)
+    response = requests.post(API_URL, data=data, headers=headers)
 
     print(response.json())
-    
+
 apiTextToSpeech()
