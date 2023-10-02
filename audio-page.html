@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproducción de Audio</title>
+</head>
+<body>
+    <audio id="audioPlayer" controls>
+        <source src="https://ttsmp3.com/created_mp3/ffc9cddac51ed1e533567e4f50db6dd4.mp3" type="audio/mp3">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+
+    <script>
+        const audio = new Audio('https://ttsmp3.com/created_mp3/ffc9cddac51ed1e533567e4f50db6dd4.mp3');
+
+        audio.addEventListener('canplaythrough', () => {
+            audio.play();
+        });
+
+        audio.addEventListener('ended', () => {
+            console.log('Reproducción finalizada.');
+        });
+    </script>
+</body>
+</html>
